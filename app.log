@@ -1,5 +1,0 @@
-2026-08-27 00:45:33,798 - INFO - Conversion successful: 150.0 USD to EUR = 127.50
-2026-08-27 00:46:01,142 - INFO - Conversion successful: 100.0 USD to INR = 9524.00
-2026-08-27 00:46:08,245 - ERROR - Amount cannot be negative.
-2026-08-27 00:46:15,059 - ERROR - Unsupported currency code: XYZ
-2026-08-27 00:46:22,565 - ERROR - Unsupported currency conversion: GBP to JPY
