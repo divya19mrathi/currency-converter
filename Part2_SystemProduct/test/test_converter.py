@@ -15,6 +15,11 @@ class TestCurrencyConverter(unittest.TestCase):
         result = self.converter.convert("USD", "INR", 100)
         self.assertEqual(result, 9524.0)
 
+
+    def test_same_currency(self):
+        result = self.converter.convert("USD", "USD", 100)
+        self.assertEqual(result, 100)
+
     def test_negative_amount(self):
         with self.assertRaises(ValueError):
             self.converter.convert("USD", "EUR", -100)

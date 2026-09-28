@@ -15,15 +15,19 @@ class CurrencyConverter:
         from_currency = from_currency.upper()
         to_currency = to_currency.upper()
 
-        if from_currency not in self.rates:
-            raise ValueError(f"Unsupported currency code: {from_currency}")
-
-        if to_currency not in self.rates[from_currency]:
-            raise ValueError(f"Unsupported currency conversion: {from_currency} to {to_currency}")
-
         if amount < 0:
             raise ValueError("Amount cannot be negative.")
 
-        rate = self.rates[from_currency][to_currency]
+        if from_currency not in self.rates:
+            raise ValueError(f"Unsupported currency code: {from_currency}")
 
+        if to_currency == from_currency:
+            return amount
+
+        if to_currency not in self.rates[from_currency]:
+            raise ValueError(
+                f"Unsupported currency conversion: {from_currency} to {to_currency}"
+            )
+
+        rate = self.rates[from_currency][to_currency]
         return amount * rate
